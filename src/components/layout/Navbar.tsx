@@ -41,7 +41,7 @@ export function Navbar() {
             {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <div className="hidden sm:block">
-            <MagneticButton href="/resume/VaidehiJain-Resume.pdf" className="py-2.5">
+            <MagneticButton href="/resume/Vaidehi%20Jain.pdf" className="py-2.5">
               <Download size={16} /> Resume
             </MagneticButton>
           </div>

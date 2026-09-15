@@ -71,7 +71,7 @@ UI files use `.tsx`. Data, services, types, hooks, and utility files use `.ts` w
 Place the final resume PDF at:
 
 ```text
-public/resume/VaidehiJain-Resume.pdf
+public/resume/Vaidehi Jain.pdf
 ```
 
 ## Environment Variables

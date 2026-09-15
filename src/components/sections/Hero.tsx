@@ -50,7 +50,7 @@ export function Hero() {
           </p>
           <div className="hero-intro mt-8 flex flex-wrap gap-3">
             <MagneticButton href="#projects">View My Work <ArrowRight size={16} /></MagneticButton>
-            <MagneticButton href="/resume/VaidehiJain-Resume.pdf" variant="ghost" target="_blank" rel="noopener noreferrer">Download Resume</MagneticButton>
+            <MagneticButton href="/resume/Vaidehi%20Jain.pdf" variant="ghost" target="_blank" rel="noopener noreferrer">Download Resume</MagneticButton>
             <MagneticButton href="#contact" variant="ghost">Contact Me</MagneticButton>
           </div>
           <div className="hero-intro mt-8 flex gap-3">
