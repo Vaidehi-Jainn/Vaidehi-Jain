@@ -36,6 +36,7 @@ jobs:
       - name: Build static site
         env:
           GITHUB_PAGES: "true"
+          NEXT_PUBLIC_SITE_URL: "https://vaidehi-jainn.github.io/Vaidehi-Jain"
         run: npm run build
 
       - name: Upload Pages artifact
