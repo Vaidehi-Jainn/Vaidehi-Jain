@@ -2,19 +2,29 @@ import type { ContactFormState } from "@/lib/validations";
 
 const contactEmail = "vaidehijain.work@gmail.com";
 
-function openEmailFallback(values: ContactFormState) {
-  const subject = encodeURIComponent(`Portfolio contact from ${values.name}`);
-  const body = encodeURIComponent(
-    [
-      `Name: ${values.name}`,
-      `Email: ${values.email}`,
-      `Phone: ${values.phone}`,
-      "",
-      values.message,
-    ].join("\n"),
-  );
+async function sendStaticContactMessage(values: ContactFormState) {
+  const response = await fetch(`https://formsubmit.co/ajax/${contactEmail}`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: values.name,
+      email: values.email,
+      phone: values.phone,
+      message: values.message,
+      _subject: `Portfolio contact from ${values.name}`,
+      _template: "table",
+      _captcha: "false",
+    }),
+  });
 
-  window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+  if (!response.ok) {
+    throw new Error("Message could not be sent right now.");
+  }
+
+  return response.json() as Promise<{ success?: string; message?: string }>;
 }
 
 export async function sendContactMessage(values: ContactFormState) {
@@ -29,10 +39,10 @@ export async function sendContactMessage(values: ContactFormState) {
   const contentType = response.headers.get("content-type") ?? "";
 
   if (!contentType.includes("application/json")) {
-    openEmailFallback(values);
+    await sendStaticContactMessage(values);
     return {
       ok: true,
-      message: "Your email app has been opened with this message ready to send.",
+      message: "Thanks. Your message has been sent.",
     };
   }
 
