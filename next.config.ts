@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const repoName = "Vaidehi-Jain";
+const repoName = process.env.GITHUB_REPOSITORY?.split("/").pop() ?? "Vaidehi-Jain";
 const isGitHubPagesBuild = process.env.GITHUB_PAGES === "true";
 
 const nextConfig: NextConfig = {
