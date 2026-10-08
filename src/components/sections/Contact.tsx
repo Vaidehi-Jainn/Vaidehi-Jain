@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { validateContactForm, type ContactFormState } from "@/lib/validations";
 import { sendContactMessage } from "@/services/contactService";
@@ -8,10 +8,9 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
 
 const initialState: ContactFormState = {
-  name: "",
   email: "",
-  phone: "",
-  message: "",
+  subject: "",
+  message: "Hello Vaidehi,\n\n\nWith regards,\n[Your Name]\n[Phone Number]\n\nThank you",
 };
 
 export function ResumeContact() {
@@ -19,6 +18,17 @@ export function ResumeContact() {
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormState, string>>>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
+
+  useEffect(() => {
+    if (status !== "success" && status !== "error") return;
+
+    const timeout = window.setTimeout(() => {
+      setStatus("idle");
+      setStatusMessage("");
+    }, 4000);
+
+    return () => window.clearTimeout(timeout);
+  }, [status, statusMessage]);
 
   const update = (field: keyof ContactFormState, value: string) => {
     setValues((current) => ({ ...current, [field]: value }));
@@ -72,12 +82,9 @@ export function ResumeContact() {
 
           <GlassCard className="p-5 sm:p-6">
             <form onSubmit={submit} className="grid gap-4">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Name" error={errors.name}><input value={values.name} onChange={(e) => update("name", e.target.value)} className="input" placeholder="Your name" /></Field>
-                <Field label="Email" error={errors.email}><input value={values.email} onChange={(e) => update("email", e.target.value)} className="input" placeholder="Your email" /></Field>
-              </div>
-              <Field label="Mobile Number" error={errors.phone}><input value={values.phone} onChange={(e) => update("phone", e.target.value)} className="input" placeholder="Your number" /></Field>
-              <Field label="Message" error={errors.message}><textarea value={values.message} onChange={(e) => update("message", e.target.value)} className="input min-h-36 resize-y" placeholder="Tell me what you would like to build..." /></Field>
+              <Field label="From Email" error={errors.email}><input value={values.email} onChange={(e) => update("email", e.target.value)} className="input" placeholder="your.email@example.com" /></Field>
+              <Field label="Subject" error={errors.subject}><input value={values.subject} onChange={(e) => update("subject", e.target.value)} className="input" placeholder="Email subject" /></Field>
+              <Field label="Message" error={errors.message}><textarea value={values.message} onChange={(e) => update("message", e.target.value)} className="input min-h-56 resize-y overflow-auto whitespace-pre-line" /></Field>
               <button disabled={status === "loading"} className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 font-semibold text-white transition hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-slate-950">
                 <Send size={17} /> {status === "loading" ? "Sending..." : "Submit"}
               </button>

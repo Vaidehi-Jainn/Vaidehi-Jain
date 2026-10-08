@@ -10,11 +10,10 @@ async function sendStaticContactMessage(values: ContactFormState) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name: values.name,
       email: values.email,
-      phone: values.phone,
+      subject: values.subject,
       message: values.message,
-      _subject: `Portfolio contact from ${values.name}`,
+      _subject: values.subject,
       _template: "table",
       _captcha: "false",
     }),
