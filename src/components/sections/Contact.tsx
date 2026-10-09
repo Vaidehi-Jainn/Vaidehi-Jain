@@ -84,7 +84,7 @@ export function ResumeContact() {
             <form onSubmit={submit} className="grid gap-4">
               <Field label="From Email" error={errors.email}><input value={values.email} onChange={(e) => update("email", e.target.value)} className="input" placeholder="your.email@example.com" /></Field>
               <Field label="Subject" error={errors.subject}><input value={values.subject} onChange={(e) => update("subject", e.target.value)} className="input" placeholder="Email subject" /></Field>
-              <Field label="Message" error={errors.message}><textarea value={values.message} onChange={(e) => update("message", e.target.value)} className="input min-h-56 resize-y overflow-auto whitespace-pre-line" /></Field>
+              <Field label="Message" error={errors.message}><textarea value={values.message} onChange={(e) => update("message", e.target.value)} className="input min-h-56 resize-y overflow-auto whitespace-pre-line" data-native-scroll /></Field>
               <button disabled={status === "loading"} className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 font-semibold text-white transition hover:-translate-y-1 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-slate-950">
                 <Send size={17} /> {status === "loading" ? "Sending..." : "Submit"}
               </button>

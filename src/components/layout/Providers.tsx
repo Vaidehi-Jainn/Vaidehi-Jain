@@ -43,7 +43,11 @@ export function Providers({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (reduced) return;
-    const lenis = new Lenis({ duration: 1.05, smoothWheel: true });
+    const lenis = new Lenis({
+      duration: 1.05,
+      smoothWheel: true,
+      prevent: (node) => node instanceof HTMLElement && Boolean(node.closest("textarea, input, select, [data-native-scroll]")),
+    });
     let rafId = 0;
     const raf = (time: number) => {
       lenis.raf(time);
