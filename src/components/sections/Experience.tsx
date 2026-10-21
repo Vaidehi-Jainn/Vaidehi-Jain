@@ -1,13 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BriefcaseBusiness } from "lucide-react";
 import { experience } from "@/data/experience";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Section } from "@/components/ui/Section";
 
+function getDuration(startDate: string, today: Date) {
+  const [year, month] = startDate.split("-").map(Number);
+  // Count the starting month, matching the completed roles' month ranges.
+  const totalMonths = Math.max(0, (today.getFullYear() - year) * 12 + today.getMonth() - (month - 1) + 1);
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+  return [years ? `${years} ${years === 1 ? "yr" : "yrs"}` : "", months ? `${months} ${months === 1 ? "mo" : "mos"}` : ""]
+    .filter(Boolean)
+    .join(" ") || "0 mos";
+}
+
 export function Experience() {
   const [open, setOpen] = useState<number | null>(null);
+  const [today, setToday] = useState<Date | null>(null);
+
+  useEffect(() => {
+    const refresh = () => setToday(new Date());
+    refresh();
+    const interval = window.setInterval(refresh, 60_000);
+    return () => window.clearInterval(interval);
+  }, []);
   const timeline = experience.flatMap((item) =>
     item.roles.map((role) => ({
       ...role,
@@ -21,6 +40,7 @@ export function Experience() {
       <div className="relative grid gap-5 before:absolute before:left-5 before:top-6 before:h-[calc(100%-3rem)] before:w-px before:bg-gradient-to-b before:from-primary before:via-accent before:to-secondary md:before:left-1/2">
         {timeline.map((item, index) => {
           const isOpen = open === index;
+          const duration = item.startDate ? (today ? getDuration(item.startDate, today) : null) : item.duration;
 
           return (
             <div key={`${item.company}-${item.title}`} className={`relative grid gap-5 md:grid-cols-2 ${index % 2 ? "" : "md:[&>div]:col-start-2"}`}>
@@ -36,7 +56,7 @@ export function Experience() {
               >
                 <div tabIndex={0} className="w-full text-left outline-none">
                   <p className="text-sm font-semibold text-accent">
-                    {item.period} · {item.duration}
+                    {item.period}{duration && ` · ${duration}`}
                   </p>
                   <h3 className="mt-2 font-display text-2xl font-semibold text-slate-950 dark:text-white">{item.title}</h3>
                   <p className="mt-1 text-slate-600 dark:text-slate-300">{item.company}</p>

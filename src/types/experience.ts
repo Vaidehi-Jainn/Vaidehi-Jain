@@ -9,7 +9,8 @@ export type Experience = {
 export type ExperienceRole = {
   title: string;
   period: string;
-  duration: string;
+  duration?: string;
+  startDate?: string;
   responsibilities: string[];
   skills: string[];
 };

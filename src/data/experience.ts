@@ -4,13 +4,12 @@ export const experience: Experience[] = [
   {
     company: "HG Technologies",
     employmentType: "Full-time",
-    totalDuration: "1 yr 10 mos",
     location: "Jaipur, Rajasthan, India · On-site",
     roles: [
       {
         title: "Frontend Developer",
         period: "Jul 2025 - Present",
-        duration: "1 yr 4 mos",
+        startDate: "2025-07",
         responsibilities: [
           "Developed responsive, scalable and extensible web applications using React.js, Next.js, JavaScript, Tailwind CSS, and Material UI, ensuring high performance across modern browsers.",
           "Built reusable UI components and maintained a modular codebase, improving development efficiency and application maintainability.",
