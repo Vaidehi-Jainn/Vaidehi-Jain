@@ -5,17 +5,22 @@ export const skillCategories: SkillCategory[] = [
     title: "Frontend Development",
     skills: [
       "HTML5",
-      "CSS3",
       "JavaScript",
       "TypeScript",
       "React.js",
       "Next.js",
       "Tailwind CSS",
       "Material UI",
-      "Bootstrap",
       "Responsive Design",
       "API Integration",
     ].map((name, index) => ({ name, level: index < 8 ? "Proficient" : "Working Knowledge" })),
+  },
+  {
+    title: "Backend Development",
+    skills: ["Node.js", "Express.js", "RESTful APIs"].map((name) => ({
+      name,
+      level: "Working Knowledge",
+    })),
   },
   {
     title: "Visual Design",
@@ -27,7 +32,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: "Databases",
-    skills: ["MySQL", "MongoDB"].map((name) => ({
+    skills: ["MongoDB"].map((name) => ({
       name,
       level: "Working Knowledge",
     })),
@@ -43,21 +48,16 @@ export const skillCategories: SkillCategory[] = [
 
 export const marqueeTech = [
   "HTML5",
-  "CSS3",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
   "Tailwind CSS",
-  "Material UI",
-  "Bootstrap",
-  "Git",
+  "React.js",
+  "Next.js",
+  "Express.js",
+  "Node.js",
+  "MongoDB",
+  "GIT",
   "GitHub",
-  "GitHub Actions",
   "CI/CD",
   "Agile/Scrum",
-  "MySQL",
-  "MongoDB",
-  "Figma",
   "VS Code",
+  "Figma",
 ];

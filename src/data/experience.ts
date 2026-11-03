@@ -7,16 +7,16 @@ export const experience: Experience[] = [
     location: "Jaipur, Rajasthan, India · On-site",
     roles: [
       {
-        title: "Frontend Developer",
+        title: "Full Stack Developer",
         period: "Jul 2025 - Present",
         startDate: "2025-07",
         responsibilities: [
-          "Developed responsive, scalable and extensible web applications using React.js, Next.js, JavaScript, Tailwind CSS, and Material UI, ensuring high performance across modern browsers.",
-          "Built reusable UI components and maintained a modular codebase, improving development efficiency and application maintainability.",
-          "Collaborated closely with UI/UX designers, backend developers, and product teams to translate business requirements into intuitive and user-friendly interfaces.",
-          "Optimized application performance through efficient component rendering, code organization, and responsive design techniques.",
-          "Participated in code reviews, debugging, and issue resolution while following modern frontend development best practices.",
-          "Implemented responsive layouts, interactive dashboards, forms, and reusable UI patterns for enterprise web applications.",
+          "Develop end-to-end web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Next.js, from database design and APIs to responsive user interfaces.",
+          "Maintain a clean, modular, and reusable codebase by following frontend best practices, keeping features easy to extend over time.",
+          "Design and develop RESTful APIs with Node.js and Express.js, integrating them with React/Next.js frontends for data-heavy dashboards and workflows.",
+          "Model and manage application data in MongoDB, structuring schemas and queries to support.",
+          "Ensure responsive behavior across devices, adapting layouts and components for consistent usage on desktop and mobile.",
+          "Apply component-based architecture with React.js and Next.js to keep the frontend scalable as new features and modules are added.",
         ],
         skills: ["TypeScript", "Next.js", "React.js", "JavaScript", "Tailwind CSS", "Material UI", "Responsive Design", "Git"],
       },

@@ -5,13 +5,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ArrowRight, Mail, Sparkles } from "lucide-react";
-import { FaReact, FaFigma, FaJsSquare, FaLinkedin, FaGithub } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiMui } from "react-icons/si";
+import { FaReact, FaLinkedin, FaGithub } from "react-icons/fa";
+import { SiNextdotjs, SiMongodb, SiNodedotjs, SiExpress } from "react-icons/si";
 import { socials } from "@/data/navigation";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { GlassCard } from "@/components/ui/GlassCard";
 
-const roles = ["Frontend Developer", "React Developer", "Next.js Developer", "UI Designer"];
+const roles = ["MERN Stack Developer", "React.js Developer", "Next.js Developer", "Node.js Developer"];
 
 export function Hero() {
   const root = useRef<HTMLDivElement>(null);
@@ -30,7 +30,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div>
           <p className="hero-intro mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/70 px-4 py-2 text-sm font-medium text-slate-700 backdrop-blur dark:bg-white/10 dark:text-cyan-100">
-            <Sparkles size={16} /> Frontend Developer
+            <Sparkles size={16} /> Full Stack Developer
           </p>
           <h1 className="hero-intro font-display text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
             Hi, I&apos;m Vaidehi Jain
@@ -46,7 +46,7 @@ export function Hero() {
             </motion.div>
           </div>
           <p className="hero-intro mt-6 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
-            I build responsive, scalable, and high-performance web applications using React, Next.js, Tailwind CSS, and Material UI, combining clean code with thoughtful UI design.
+            I build responsive, scalable, extensible and high-performance web applications using the MERN stack, combining React and Next.js with Node.js, Express.js and MongoDB to deliver seamless end-to-end experiences.
           </p>
           <div className="hero-intro mt-8 flex flex-wrap gap-3">
             <MagneticButton href="#projects">View My Work <ArrowRight size={16} /></MagneticButton>
@@ -75,23 +75,23 @@ export function Hero() {
             <div className="rounded-xl bg-slate-950 p-5 font-mono text-sm text-slate-200">
               <p><span className="text-cyan-300">const</span> developer = &#123;</p>
               <p className="pl-4">name: <span className="text-emerald-300">&quot;Vaidehi Jain&quot;</span>,</p>
-              <p className="pl-4">focus: <span className="text-emerald-300">&quot;Frontend Development&quot;</span>,</p>
-              <p className="pl-4">stack: [<span className="text-emerald-300">&quot;React&quot;</span>, <span className="text-emerald-300">&quot;Next.js&quot;</span>],</p>
+              <p className="pl-4">focus: <span className="text-emerald-300">&quot;Full Stack Development&quot;</span>,</p>
+              <p className="pl-4">stack: [<span className="text-emerald-300">&quot;React&quot;</span>, <span className="text-emerald-300">&quot;Next.js&quot;</span>, <span className="text-emerald-300">&quot;MongoDB&quot;</span>],</p>
               <p className="pl-4">designSense: <span className="text-purple-300">true</span></p>
               <p>&#125;;</p>
             </div>
             <div className="mt-5 grid grid-cols-2 gap-3">
-              {["Enterprise dashboards", "E-commerce Interfaces", "Responsive UI", "Design-to-Code"].map((item) => (
+              {["End-to-End Development", "Authentication & Authorization", "API Integration", "Performance Optimization"].map((item) => (
                 <div key={item} className="rounded-xl border border-white/10 bg-slate-950/5 p-3 text-sm font-medium text-slate-700 dark:bg-white/5 dark:text-slate-200">{item}</div>
               ))}
             </div>
           </GlassCard>
-          <div className="float-tech absolute -left-3 top-12 grid h-14 w-14 place-items-center rounded-2xl bg-white text-sky-500 shadow-card"><FaReact size={26} /></div>
-          <div className="float-tech absolute -right-2 top-24 grid h-14 w-14 place-items-center rounded-2xl bg-white text-black shadow-card"><SiNextdotjs size={25} /></div>
-          <div className="float-tech absolute bottom-20 -left-4 grid h-14 w-14 place-items-center rounded-2xl bg-white text-cyan-500 shadow-card"><SiTailwindcss size={26} /></div>
-          <div className="float-tech absolute bottom-4 right-10 grid h-14 w-14 place-items-center rounded-2xl bg-white text-purple-500 shadow-card"><FaFigma size={24} /></div>
-          <div className="float-tech absolute right-24 top-0 grid h-14 w-14 place-items-center rounded-2xl bg-white text-yellow-500 shadow-card"><FaJsSquare size={24} /></div>
-          <div className="float-tech absolute left-24 -bottom-5 grid h-14 w-14 place-items-center rounded-2xl bg-white text-blue-500 shadow-card"><SiMui size={24} /></div>
+          <div title="React.js" className="float-tech absolute -left-3 top-12 grid h-14 w-14 place-items-center rounded-2xl bg-white text-sky-500 shadow-card"><FaReact size={26} aria-label="React.js" /></div>
+          <div title="Next.js" className="float-tech absolute -right-2 top-24 grid h-14 w-14 place-items-center rounded-2xl bg-white text-black shadow-card"><SiNextdotjs size={25} aria-label="Next.js" /></div>
+          <div title="MongoDB" className="float-tech absolute bottom-20 -left-4 grid h-14 w-14 place-items-center rounded-2xl bg-white text-green-600 shadow-card"><SiMongodb size={26} aria-label="MongoDB" /></div>
+          <div title="GitHub" className="float-tech absolute -bottom-16 left-28 grid h-14 w-14 place-items-center rounded-2xl bg-white text-black shadow-card"><FaGithub size={26} aria-label="GitHub" /></div>
+          <div title="Node.js" className="float-tech absolute bottom-4 right-10 grid h-14 w-14 place-items-center rounded-2xl bg-white text-green-600 shadow-card"><SiNodedotjs size={24} aria-label="Node.js" /></div>
+          <div title="Express.js" className="float-tech absolute right-24 top-0 grid h-14 w-14 place-items-center rounded-2xl bg-white text-black shadow-card"><SiExpress size={24} aria-label="Express.js" /></div>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import type { IconType } from "react-icons";
 import { FaBootstrap, FaCss3Alt, FaGithub, FaReact } from "react-icons/fa";
-import { SiCanvas, SiFigma, SiGit, SiGithubactions, SiHtml5, SiJavascript, SiMongodb, SiMui, SiMysql, SiNextdotjs, SiPostman, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { SiCanvas, SiExpress, SiFigma, SiGit, SiGithubactions, SiHtml5, SiJavascript, SiMongodb, SiMui, SiMysql, SiNextdotjs, SiNodedotjs, SiPostman, SiTailwindcss, SiTypescript } from "react-icons/si";
 import { Blocks, Brush, Code2, FileText, Globe2, MonitorSmartphone, Plug, RefreshCw, Users, Waypoints } from "lucide-react";
 import { skillCategories } from "@/data/skills";
 import { Reveal } from "@/components/common/Reveal";
@@ -18,6 +18,9 @@ const skillIcons: Record<string, IconType | typeof Code2> = {
   TypeScript: SiTypescript,
   "React.js": FaReact,
   "Next.js": SiNextdotjs,
+  "Node.js": SiNodedotjs,
+  "Express.js": SiExpress,
+  "RESTful APIs": Plug,
   "Tailwind CSS": SiTailwindcss,
   "Material UI": SiMui,
   Bootstrap: FaBootstrap,
@@ -76,7 +79,7 @@ export function Skills() {
   const category = skillCategories.find((item) => item.title === active) || skillCategories[0];
 
   return (
-    <Section id="skills" eyebrow="Skills" title="Modern frontend stack, grounded in UI decisions." description="Practical tools and technologies, I use to design and build polished web experiences.">
+    <Section id="skills" eyebrow="Skills" title="Where clean code meets seamless user experiences." description="Practical tools and technologies, I use to design and build polished web experiences.">
       <div className="mb-6 flex flex-wrap gap-3">
         {skillCategories.map((item) => (
           <button key={item.title} onClick={() => setActive(item.title)} className={cn("rounded-full border px-5 py-3 text-sm font-semibold transition-all duration-300 ease-out hover:-translate-y-0.5", active === item.title ? "border-primary bg-primary text-white shadow-glow" : "border-slate-200 bg-white/70 text-slate-700 hover:border-primary dark:border-white/10 dark:bg-white/10 dark:text-slate-200")}>

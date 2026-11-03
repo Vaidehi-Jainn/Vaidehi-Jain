@@ -66,7 +66,7 @@ export function ResumeContact() {
   };
 
   return (
-    <Section id="contact" eyebrow="Contact" title="Let's build something meaningful." description="I'm open to frontend development opportunities, freelance projects, collaborative work, and roles where development and thoughtful design come together.">
+    <Section id="contact" eyebrow="Contact" title="Let's build something meaningful." description="I'm open to full stack development opportunities, freelance projects, collaborative work, and roles where development and thoughtful design come together.">
         <div className="grid gap-6 lg:grid-cols-[0.72fr_1.28fr]">
           <div className="grid content-start gap-4">
             <GlassCard className="p-5">

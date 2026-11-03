@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, Brush, Code2, FileCode2, GraduationCap, Mail, MonitorSmartphone, Phone } from "lucide-react";
+import { BriefcaseBusiness, Code2, Database, GitBranch, GraduationCap, Mail, MonitorSmartphone, Phone } from "lucide-react";
 import { Reveal } from "@/components/common/Reveal";
 import { education } from "@/data/education";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -6,24 +6,24 @@ import { Section } from "@/components/ui/Section";
 
 const highlights = [
   {
-    title: "Frontend Development",
-    description: "Developing fast, responsive, scalable, and extensible web experiences with modern frontend technologies.",
+    title: "Full Stack Development",
+    description: "Building end-to-end web applications using the MERN stack with seamless integration.",
     Icon: Code2,
   },
   {
     title: "Responsive Design",
-    description: "Creating layouts that stay polished across mobile, tablet, and desktop screens.",
+    description: "Building responsive, high-performance interfaces with React.js and Next.js using reusable components.",
     Icon: MonitorSmartphone,
   },
   {
-    title: "Clean Code",
-    description: "Writing reusable components, clear structure, and maintainable frontend logic.",
-    Icon: FileCode2,
+    title: "Version Control & CI/CD",
+    description: "Managing code with Git and GitHub while streamlining deployment workflow",
+    Icon: GitBranch,
   },
   {
-    title: "Visual Design",
-    description: "Designing user-friendly interfaces that combine aesthetics with functionality.",
-    Icon: Brush,
+    title: "Database Management",
+    description: "Designing MongoDB schemas and optimizing data storage and retrieval.",
+    Icon: Database,
   },
 ];
 
@@ -42,20 +42,20 @@ const profileDetails = [
   },
   {
     label: "Experience",
-    value: "1.5+ years",
+    value: "2 years",
     Icon: BriefcaseBusiness,
   },
 ];
 
 export function About() {
   return (
-    <Section id="about" eyebrow="About" title="Frontend craft with design fluency." description="I transform ideas and designs into practical, responsive interfaces that feel smooth and intuitive.">
+    <Section id="about" eyebrow="About" title="From interface to database, I build the complete experience." description="I transform ideas and designs into complete web applications with intuitive interfaces and reliable backends.">
       <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         <Reveal>
           <GlassCard className="gradient-border h-full">
-            <div className="mb-6 inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">Available for frontend opportunities and freelance work</div>
+            <div className="mb-6 inline-flex rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">Available for full stack opportunities and freelance work</div>
             <p className="text-lg leading-8 text-slate-700 dark:text-slate-200">
-              I&apos;m a Frontend Developer specializing in Next.js and React, with a passion for building responsive, high-performance, and user-centric web applications. I combine development skills with a working knowledge of Figma to bridge the gap between design and implementation, ensuring seamless user experiences. I enjoy solving real-world challenges through clean, maintainable code and continuously expanding my expertise in modern frontend technologies, Visual Design, and development best practices. I&apos;m always eager to learn, collaborate, and contribute to building digital products that are both functional and visually impactful.
+              I&apos;m a Full-Stack Developer with 2 years of experience building scalable, production-ready web applications using the MERN stack. I specialize in developing responsive, high-performance interfaces, RESTful APIs, and efficient data-driven solutions using modern frontend and backend technologies. With experience across enterprise dashboards, B2B marketplaces, e-commerce platforms, and email automation tools, I focus on writing clean, modular, and maintainable code. I also bring working knowledge of Figma, visual design, and CI/CD workflows to bridge the gap between design and development. I&apos;m passionate about solving real-world problems, continuously learning, and building intuitive digital products that deliver seamless user experiences.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {profileDetails.map(({ label, value, href, Icon }) => {
