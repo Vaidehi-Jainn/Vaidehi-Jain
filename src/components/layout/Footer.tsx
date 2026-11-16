@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
           <div>
             <p className="font-display text-2xl font-semibold text-slate-950 dark:text-white">Vaidehi Jain</p>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Full Stack Developer</p>
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Software Engineer</p>
           </div>
           <div className="flex flex-wrap gap-3">
             {navigation.map((item) => (

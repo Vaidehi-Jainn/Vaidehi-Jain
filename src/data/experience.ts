@@ -7,7 +7,7 @@ export const experience: Experience[] = [
     location: "Jaipur, Rajasthan, India · On-site",
     roles: [
       {
-        title: "Full Stack Developer",
+        title: "Software Engineer",
         period: "Jul 2025 - Present",
         startDate: "2025-07",
         responsibilities: [

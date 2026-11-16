@@ -30,7 +30,7 @@ export function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div>
           <p className="hero-intro mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/70 px-4 py-2 text-sm font-medium text-slate-700 backdrop-blur dark:bg-white/10 dark:text-cyan-100">
-            <Sparkles size={16} /> Full Stack Developer
+            <Sparkles size={16} /> Software Engineer
           </p>
           <h1 className="hero-intro font-display text-4xl font-semibold leading-tight text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
             Hi, I&apos;m Vaidehi Jain
@@ -75,7 +75,7 @@ export function Hero() {
             <div className="rounded-xl bg-slate-950 p-5 font-mono text-sm text-slate-200">
               <p><span className="text-cyan-300">const</span> developer = &#123;</p>
               <p className="pl-4">name: <span className="text-emerald-300">&quot;Vaidehi Jain&quot;</span>,</p>
-              <p className="pl-4">focus: <span className="text-emerald-300">&quot;Full Stack Development&quot;</span>,</p>
+              <p className="pl-4">role: <span className="text-emerald-300">&quot;Software Engineer&quot;</span>,</p>
               <p className="pl-4">stack: [<span className="text-emerald-300">&quot;React&quot;</span>, <span className="text-emerald-300">&quot;Next.js&quot;</span>, <span className="text-emerald-300">&quot;MongoDB&quot;</span>],</p>
               <p className="pl-4">designSense: <span className="text-purple-300">true</span></p>
               <p>&#125;;</p>
