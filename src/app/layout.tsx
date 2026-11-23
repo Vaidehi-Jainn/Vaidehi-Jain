@@ -10,14 +10,14 @@ import { ScrollProgress } from "@/components/layout/ScrollProgress";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://vaidehi-jainn.github.io/Vaidehi-Jain"),
   title: {
-    default: "Vaidehi Jain | Frontend Developer",
+    default: "Vaidehi Jain | Software Engineer",
     template: "%s | Vaidehi Jain",
   },
   description:
-    "Vaidehi Jain is a Frontend Developer, React Developer, Next.js Developer, and UI/UX Designer building responsive enterprise dashboards, e-commerce interfaces, landing pages, and marketplace platforms.",
+    "Vaidehi Jain is a Software Engineer specializing in MERN Stack development, building scalable, responsive, and user-friendly web applications using MongoDB, Express.js, React.js, Node.js, Next.js.",
   openGraph: {
-    title: "Vaidehi Jain | Frontend Developer",
-    description: "Modern frontend developer portfolio for React, Next.js, Tailwind CSS, Material UI, and UI/UX design work.",
+    title: "Vaidehi Jain | Software Engineer",
+    description: "Building seamless digital experiences with modern technologies, clean code, and a focus on performance and scalability.",
     type: "website",
   },
 };
